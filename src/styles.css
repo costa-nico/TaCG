@@ -1,0 +1,47 @@
+/* Keep the local font-face if provided */
+@font-face {
+  font-family: 'NanumBarunGothic';
+  src: url('/assets/NanumBarunGothicBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Reset: make the page and container fill the viewport */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  /* tiled background image (no scaling), fallback color black */
+  background-color: #000;
+  background-image: url('/assets/쿵야.png');
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: 0 0;
+  font-family: 'NanumBarunGothic', 'Nanum Gothic', sans-serif;
+}
+
+/* Game container should occupy the whole viewport */
+#game-container {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  background: transparent; /* let page background (tiled image) show through */
+}
+
+/* Let Phaser control the canvas size so FIT keeps aspect ratio.
+   Avoid forcing both width+height to 100% which causes distortion. */
+#game-container canvas {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto !important;
+  height: auto !important;
+  display: block;
+  margin: 0 auto; /* center if letterbox on sides */
+}
+
+/* Hide any scrollbars that might appear */
+* { box-sizing: border-box; }
+
