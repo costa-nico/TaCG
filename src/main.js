@@ -15,7 +15,7 @@ const config = {
     },
     render: { pixelArt: false, antialias: true },
     
-  resolution: window.devicePixelRatio || 1,
+    resolution: window.devicePixelRatio || 1,
     parent: 'game-container',
     backgroundColor: '#FAFAF8',
     scene: [MainScene, BattleScene],

@@ -1,12 +1,23 @@
 export const cardList = [
     { 
+        id: 0, 
+        name: "허수아비", 
+        cost: 1, 
+        atk: 1, 
+        hp: 1, 
+        texture: "scarecrow",
+        keywords: [], 
+        abilities: {
+        }
+    },
+    { 
         id: 1, 
         name: "돼지", 
         cost: 1, 
         atk: 0, 
-        hp: 5, 
-        texture: "shield_soldier",
-        keywords: ["TAUNT"], 
+        hp: 1, 
+        texture: "pig",
+        keywords: [], 
         abilities: {
             onTurnEnd: { ID: "ADD_HP", target: "self", amount: 1 },
         }
@@ -20,7 +31,7 @@ export const cardList = [
         texture: "farmer",
         keywords: [],
         abilities: {
-            onTurnStart: { ID: "ADD_CUR_MANA", target: "myMaster", amount: 1 }
+            onTurnStart: { ID: "ADD_MANA", target: "myMaster", amount: 1 }
         }
     },
     {
@@ -28,11 +39,11 @@ export const cardList = [
         name: "곰팡이",
         cost: 2,
         atk: 1,
-        hp: 1,
+        hp: 2,
         texture: "mold",
         keywords: [],
         abilities: {
-            onTurnEnd: { ID: "DOUBLE_HP", target: "self", amount: null }
+            onSummon: { ID: "DOUBLE_HP", target: "self", amount: null }
         }
     }
 ];
@@ -42,5 +53,6 @@ export const cardList = [
             onAttack: null,
             onDeath: null,
             onTurnStart: null,
-            onTurnEnd: null
+            onTurnEnd: null,
+            onDamage: null,
 */
